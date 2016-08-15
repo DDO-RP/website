@@ -1,0 +1,36 @@
+<script type="text/javascript" src="..//jsTimezoneDetect.js"></script><!-- Make sure the path to this script is correct -->
+<script>
+	$( function() {
+		$( \'#gcal\' ).attr( \'src\', $( \'#gcal\' ).attr( \'src\' ) + encodeURIComponent( jstz.determine().name() ) );
+	} );
+</script>
+<div id="calendar">
+	<!--  Known settings:  (All settings use "&amp;" to separate)
+		showDate		= Show the month in month view:				(0 || 1)
+		showTitle		= Show the calendar title:					(0 || 1)
+		showNav			= Today, last period, next period buttons:	(0 || 1)
+		showPrint		= Show the print button:					(0 || 1)
+		showTabs		= Show [Week|Month|Agenda] buttons:			(0 || 1)
+		showCalendars	= Show the drop down to toggle src below:	(0 || 1)
+		showTz			= Show the calendar's timezone on bottom:	(0 || 1)
+		wkst			= Week starts on:	Sunday, Monday, ..., Saturday == 1, 2, ..., 7
+		hl				= Two character language code if not default
+		mode			= WEEK (none) AGENDA for week view, month view, or agenda view
+		title			= % escaped text for calendar title
+		height			= Raw number of pixels (eg 400)
+		bgcolor			= Background color in hex prefixed with %23
+		src				= %40 replacing @ for email address associated with calendar to display, can have multiples
+			en.usa%23holiday%40group.v.calendar.google.com
+			%23contacts%40group.v.calendar.google.com
+			kf2j4jvu21gc2jskfjf2e2ki34
+		color			= Color for the immediately preceding src
+			%232952A3
+			%23333333
+			%232F6309
+		ctz				= Timezone identifier, seems to use names replacing / with %2F
+			America%2FNew_York
+			America%2FChicago
+			LEAVE THIS BLANK if you use jsTimezoneDetect.js and the script above as that should automatically choose the local time for the viewer.
+	-->
+	<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=kf2j4jvu21gc2jskfjf2e2ki34%40gmail.com&amp;color=%232F6309&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%232952A3&amp;ctz=" style=" border-width:0 " width="700" height="400" frameborder="0" scrolling="no" id="gcal"></iframe>
+</div>
